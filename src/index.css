@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #090A0D;
+  --color-charcoal: #111318;
+  --color-panel: #161920;
+  --color-hairline: #232732;
+  --color-mars: #D9532F;
+  --color-mars-muted: #B64223;
+  --color-mars-amber: #D9822B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #090A0D;
+    color: #E6E8EC;
+    color-scheme: dark;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.ares-ol-scale .ol-scale-line {
+  position: static;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.ares-ol-scale .ol-scale-line-inner {
+  border: 1px solid #9ca3af;
+  border-top: none;
+  color: #f3f4f6;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  padding: 2px 6px 3px;
+  margin: 0;
+  text-align: center;
+  will-change: contents, width;
+}
+
+.ares-map-container .ol-viewport {
+  cursor: crosshair;
+}
+
+.ares-map-container .ol-viewport:active {
+  cursor: grabbing;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    color-scheme: light !important;
+  }
+
+  .ares-report-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    width: 100% !important;
+  }
+}
+
+
